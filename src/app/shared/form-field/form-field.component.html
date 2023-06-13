@@ -1,0 +1,15 @@
+<form [formGroup]="customForm" (ngSubmit)="setFormValue()">
+    <label>First Name</label>
+    <input type="text" class="form-control" formControlName="fstNm" placeholder="Enter first name">
+    <label>Last Name</label>
+    <input type="text" class="form-control" formControlName="lstNm" placeholder="Enter last name">
+    <div class="mt-3">
+      <select class="form-select" formControlName="selectedgender">
+        <option selected disabled value="">Select Gender</option>
+        <option *ngFor="let option of genderOptions" [value]="option.id">
+          {{ option.gender }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">SUBMIT</button>
+  </form>

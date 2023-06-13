@@ -1,0 +1,24 @@
+<div class="cointainer-fluid">
+  <div class="row  mt-2">
+    <div class="col-md-6">
+      <!-- first procedure -->
+      <!-- <div *ngFor="let fullname of nameList; let i = index;">
+        <app-app-required-field [firstName]="fullname.fstNm" [lastName]="fullname.lstNm"></app-app-required-field>
+      </div> -->
+      <!-- second procedure -->
+        <app-app-required-field [nameListfromComponent]="nameList"></app-app-required-field>
+    </div>
+    <div class="col-md-6">
+      <!-- <form [formGroup]="customForm" (ngSubmit)="getFormValue()">
+        <label>First Name</label>
+        <input type="text" class="form-control" formControlName="fstNm" placeholder="Enter first name">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lstNm" placeholder="Enter last name">
+        <button type="submit" class="btn btn-primary mt-2">SUBMIT</button>
+      </form> -->
+      <div>
+        <app-form-field (dispatchnameList)="getNameList($event)"></app-form-field>
+      </div>
+    </div>
+  </div>
+</div>
